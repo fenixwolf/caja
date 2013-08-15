@@ -8,8 +8,20 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/js/bootstrap.js" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/styles.css" media="screen">
+	<script src="<?=base_url()?>dist/js/jquery-2.0.3.min.js"></script>
+	<script src="<?=base_url()?>dist/js/fechajquery.js"></script>
+	<script>
+
+
+
+	jQuery(function($){
+   $("#fecha").mask("99-99-9999");
+   //$('#monto').mask('99999,99');
+  	});
+	</script>
 </head>
 <header>
+
 	<div class="container">
 		<div class="row">
 			<div class="colg-lg-12">
@@ -22,7 +34,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-lg-offset-3">
-				<?php $this->load->view('contenidos/carga_v'); ?>
+				<?php $this->load->view('contenidos/carga_operacion_v');
+				 ?>
+
 			</div>
 		</div>
 	</div>
@@ -38,5 +52,5 @@
 		</div>
 	</div>
 </footer>
-<script src="<?=base_url()?>dist/js/jquery-2.0.3.min.js"></script>
+
 </html>

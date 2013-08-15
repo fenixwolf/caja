@@ -11,31 +11,33 @@ class Carga_c extends CI_Controller {
 	public function index()
 
 	{
+		$contenidos = 'contenidos/carga_v';
+		$cuerpo=$this->input->post($contenidos);
 	
-	
-	}
+		$this->load->view('welcome_message');
+				}
 
 	public function carga()
 	{
-		//$this->load->model('carga_monto');
 		//Imprime arreglos enviados//
+	 	//date("d-m-Y, h:m:A", strtotime($registro['fecha_actualizacion']))
 		$data = array(
-			'monto' =>$this->input->post("monto") , 
-			'fecha' =>$this->input->post("fecha") ,
-
+			'monto'=> $this->input->post('monto') , 
+			'fecha' => date('Y-m-d',strtotime($this->input->post('fecha'))) ,
 			);
 
 		$salida=$this->carga_m->ingreso($data);
-		echo $salida;
-		//echo "salus";
-		//echo '<pre>',print_r($_POST),'</pre>';die;
-		/**echo '<pre>',print_r($_POST),'</pre>';die;
+
+		if ($salida>1) {
+			echo 'Error al Guardar los Datos';
+
+		} else {
+
+			$this->load->index();
+			//echo $data['monto'];echo $data['fecha'];
+		}
 		
-			$monto =>$this->input->post('monto');
-			$fecha =>$this->input->post('fecha');
-
-	$this->'carga_monto'->enviar_monto($mont, $fechas);*/
-
+		//echo '<pre>',print_r($_POST),'</pre>';die;
 	
 	}
 
