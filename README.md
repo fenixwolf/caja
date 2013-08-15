@@ -1,4 +1,4 @@
-Sistema de Control de Caja AVARO
-Sistema siempre de control de Caja Chica
-Avaro
+#Sistema de Control de Caja Chica AVARO
+
+
 Julio Yacot
