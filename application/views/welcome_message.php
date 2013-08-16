@@ -44,7 +44,7 @@
 
 </body>
 <footer>
-	<div class="container">
+	<div class="container" id="footer">
 		<div class="row">
 			<div class="col-lg-12">
 				<?php $this->load->view('template/footer'); ?>
