@@ -1,6 +1,5 @@
-<div>
-	<div class="row">
-		<div class="col-lg-9">
+<div class="row">
+		<div class="col-lg-3 col-lg-offset-2">
 			<?php
 
 		$form= array(			
@@ -24,7 +23,7 @@
 		 );
 		$fecha = array(
 			"name"=>"fecha",
-			"type"=>"date",
+			//"type"=>"date", //**Finción Incompatible con Google Chrome ya que choca con el JqueryMask de fecha**//
 			'id'=>'fecha',
 			"value"=> date('d-m-Y'),					
 			'placeholder' =>"Fecha de Operación" ,
@@ -37,22 +36,31 @@
 			'' => , 
 			);*/
 
-		
+		//Apertura del formulario de ingreso de saldo//
 
-		echo form_open("carga_c",$form);
+		echo form_open("carga_c/carga",$form);
 		echo form_label('Monto a Cargar', 'monto_cargado');
 		echo form_input($monto);
 		echo form_label("Fecha de Operación","fecha");
 		echo form_input($fecha);
-		echo form_label('Descripción','descripcion')
+		echo form_label('Detalles','detalles');		
 		?>
-		<textarea class='form-control' name="descripcion" id="" cols="3"></textarea>		
-		</div>
-	</div>
-		<?php		
+		<textarea class='form-control' name="detalles" id="" cols="2"></textarea>	
+			<?php		
 		echo form_submit($enviar);
 		echo form_reset($limpiar);
 
 		echo form_close();
- ?>
-</div>
+		//fin del formulario de ingreso de datos//
+			?>	
+		</div>
+		<div class="col-lg-4>">
+			
+		</div>		
+		<div class="col-lg-3 col-lg-offset-3">
+ 		<?php 
+ 	//Rebibe $saldototal del array $saldo en el controlador carga_c(index)
+		echo $saldototal; //<-----
+ 	 	?>
+ 		</div>
+	</div>

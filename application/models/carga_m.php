@@ -9,7 +9,7 @@ class Carga_m extends CI_Model {
     public function ingreso($data){ 	
     	
        
-      	$salida=$this->db->insert('t_monto', $data);
+      	$salida=$this->db->insert('t_ingreso', $data);
         //echo '<pre>',print_r($data),'</pre>';
 
         //echo '<pre>',print_r($cargar),'</pre>';die;

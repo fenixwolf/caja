@@ -33,8 +33,8 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-				<?php $this->load->view('contenidos/carga_operacion_v');
+			<div class="col-lg-5-offset-3">
+				<?php $this->load->view('contenidos/carga_monto_v');
 				 ?>
 
 			</div>
