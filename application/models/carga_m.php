@@ -17,6 +17,17 @@ class Carga_m extends CI_Model {
     	return $salida;
 
     }
+    public function egreso($data){     
+        
+       
+        $salida=$this->db->insert('t_rubros', $data);
+        //echo '<pre>',print_r($data),'</pre>';
+
+        //echo '<pre>',print_r($cargar),'</pre>';die;
+        //$this->db->insert('t_operacion', $cod_operacion);
+        return $salida;
+
+    }
     
 
     }

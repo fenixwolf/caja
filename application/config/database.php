@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'CAJA';
-$db['default']['password'] = 'QXeyvSZTpfnDyR3f';
+$db['default']['password'] = 'j8zxmurJLJuXUVRQ';
 $db['default']['database'] = 'CAJA';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

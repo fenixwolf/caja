@@ -12,22 +12,24 @@ class Carga_c extends CI_Controller {
 	public function index()
 
 	{
-	
+		
 		//Funcion de monto total de saldo// (Falta funcion sustraer gastos!!!)
 
 		$saldo=$this->totales_m->saldo();
 		if ($saldo>0) {
-			$total = array('saldototal' =>"<div class='alert alert-success'>Usted posee <strong>$saldo</strong> Bs. en Caja Chica</div>" );			
+			$valor_vista = array('saldototal' =>"<div class='alert alert-success'>Usted posee <strong>$saldo</strong> Bs. en Caja Chica</div>" );			
 		} elseif ($saldo==0) {
-			$total = array('saldototal' =>"<div class='alert'>Su saldo es <strong>0</strong> bs</div>"  , );
+			$valor_vista = array('saldototal' =>"<div class='alert'>Su saldo es <strong>0</strong> bs</div>"  , );
 		}else {
-			$total = array('saldototal' =>"<div class='alert alert-danger'>Usted posee <strong>$saldo</strong> Bs. en Caja Chica</div>" , );			
-		}	
-	
-		$this->load->view('welcome_message',$total);
-		//echo $total['saldototal'];		
+			$valor_vista = array('saldototal' =>"<div class='alert alert-danger'>Usted posee <strong>$saldo</strong> Bs. en Caja Chica</div>" , );			
 		}
-		//Fin de la función suma total de saldo//
+		//Fin de la función suma total de saldo//s
+		$valor_vista['contenido']="contenidos/carga_monto_v"; /*Enviando los valores de vista*/	
+		$valor_vista['title']='Registro de Ingresos a Caja Chica';	
+		$this->load->view('principal',$valor_vista);
+		//echo $valor_vista['saldototal'];		
+		}
+		
 
 	public function carga()
 	{

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sistema AVARO 1.0</title>
+	<title><?=$title?></title>
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/js/bootstrap.js" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/styles.css" media="screen">
@@ -34,7 +34,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-5-offset-3">
-				<?php $this->load->view('contenidos/carga_monto_v');
+				<?php $this->load->view($contenido);
 				 ?>
 
 			</div>
