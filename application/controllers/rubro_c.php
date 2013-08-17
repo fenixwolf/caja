@@ -37,9 +37,10 @@ class Rubro_c extends CI_Controller {
 	}
 	public function validar(){
 		//echo "prueba de Validar";
-		$this->form_validation->set_rules('abreviacion', 'Abreviacion', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('abreviacion', 'Abreviación del Rubro', 'trim|required|xss_clean');
+		$this->form_validation->set_message("required","Debe asignar un valor para <strong>%s</strong>");
 		$this->form_validation->set_rules('rubro', 'Tipo de rubro', 'trim|required|xss_clean');
-		$this->form_validation->set_message('required', "Debe introducir la información %s");
+		
 		if ($this->form_validation->run()==FALSE) {
 			$this->index();/*Si la validacion da FALSA se dirije al index en donde
 							se cargan los contenidos incluyendo el set_value	*/

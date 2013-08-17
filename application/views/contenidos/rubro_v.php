@@ -35,6 +35,7 @@
 		echo form_input($descripcion);
 		echo form_label('Abreviacion del Rubro','abreviacion');
 		echo form_input($abreviacion);
+		echo validation_errors();
 		echo form_submit($enviar);
 		echo form_reset($limpiar);
 		echo form_close();
