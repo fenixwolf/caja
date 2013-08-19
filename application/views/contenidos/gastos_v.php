@@ -4,8 +4,8 @@
 
 		<?php 
 		$form = array(
-			'name' =>'form' ,
-			'class'=>'form-inline', 
+			'role' =>'form' ,
+			'class'=>'form-horizontal', 
 			);
 
 		$monto = array(
@@ -39,18 +39,28 @@
 
 
 		echo form_open('gastos_c',$form);
+		
 		echo '<div class="form-group">';
-			echo form_label('Monto del Egreso:', 'monto');
-			echo form_input($monto);
+		echo form_label('Monto del Egreso:', 'monto');
+		echo '<div class="col-lg-6 col-lm-2">';
+		echo form_input($monto);
 		echo '</div>';
+		echo '</div>';
+
 		echo '<div class="form-group">';
+		echo '<div class="col-lg-6 col-lm-2">';
 		echo form_label('Rubro asociado: ', 'rubros');
+		echo '</div>';
 		echo form_dropdown('rubros', $listarubros);
 		echo '</div>';
+
 		echo '<div class="form-group">';
+		echo '<div class="col-lg-6">';
 		echo form_label('Monto de ingreso asociado: ', 'montos');
+		echo '</div>';
 		echo form_dropdown('montos', $listamontos);
 		echo '</div>';
+
 		echo '<div class="form-group">';			
 		echo '<div id="botones">';
 		echo form_submit($enviar);
