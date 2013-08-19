@@ -4,6 +4,7 @@
 
 		$form= array(			
 			'class' =>"form-inline",
+			'role'=>'form',
 			);
 		$limpiar = array(
 			"name"=>"limpiar",

@@ -10,7 +10,7 @@ class Carga_m extends CI_Model {
     	
        
       	$salida=$this->db->insert('t_ingreso', $data);
-        //echo '<pre>',print_r($data),'</pre>';
+        
 
         //echo '<pre>',print_r($cargar),'</pre>';die;
         //$this->db->insert('t_operacion', $cod_operacion);
@@ -31,24 +31,26 @@ class Carga_m extends CI_Model {
     }
     public function lista_rubros(){
 
-/** **//** **//** **//** **//** **//** **//** **//** **//** **//** **/
-        /*Como Demonios envío la lista de rubros a la vista??*/
 
-        $this->db->select('descripcion');
-        $rubros=$this->db->get('t_rubros');
+
+        $this->db->select('cod_rubros,descripcion');
+        $this->db->from('t_rubros');
         //echo $rubros->num_rows();die;
+        $rubros = $this->db->get();
+        $rubros = $rubros->result_array();
+        return $rubros;
 
+        } 
 
-        if ($rubros->num_rows()>0) {
+    public function lista_montos(){
 
-          foreach ($rubros->result() as $dato) {
-              $arraydato=$descripcion =$dato;
-              return $arraydato;
-          }
+        $this->db->select('cod_ingreso, fecha, monto');
+        $this->db->from('t_ingreso');
+        //echo $montos->num_rows();die;
+        $montos = $this->db->get();
+        $montos = $montos->result_array();
+        return $montos;
 
-        }
-
-        
         } 
 
     }

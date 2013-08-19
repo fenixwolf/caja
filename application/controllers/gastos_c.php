@@ -12,17 +12,12 @@ class Gastos_c extends CI_Controller {
 	public function index()
 	{
 		
-		$data=$this->carga_m->lista_rubros();
-		//echo $descripcion;die;
-		if ($data==0) {
-				$valores_gastos['listado_rubros']='';
-			} while ($descripcion != NULL) {
-				echo $descripcion;
-			}
-
-		$valores_gastos['contenido']="contenidos/gastos_v"; /*Enviando los valores de vista*/	
-		$valores_gastos['title']='Control de Gastos por Rubros | AVARO';	
-		$this->load->view('principal',$valores_gastos);
+		$data['rubros']=$this->carga_m->lista_rubros();
+		$data['montos']=$this->carga_m->lista_montos();			
+		$data['contenido']="contenidos/gastos_v"; /*Enviando los valores de vista*/	
+		$data['title']='Control de Gastos por Rubros | AVARO';
+		//echo '<pre>',print_r($data),'</pre>';	
+		$this->load->view('principal',$data);
 		
 	}
 

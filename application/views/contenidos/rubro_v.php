@@ -32,10 +32,13 @@
 
 
 		echo form_open('rubro_c/validar',$form);
+		echo '<div class="form-group">';
 		echo form_label('Rubro', 'descripcion');
 		echo form_input($descripcion);
+		echo '<div class="form-group">';
 		echo form_label('Abreviacion del Rubro','abreviacion');
 		echo form_input($abreviacion);
+		echo '<div class="form-group">';
 		echo validation_errors();
 		?>
 		<div id="botones">

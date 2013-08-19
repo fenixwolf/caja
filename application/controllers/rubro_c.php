@@ -1,13 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Rubro_c extends CI_Controller {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('carga_m');
+	}
 
 	public function index()
 	{
-		$contenido = array(
+		
+			$contenido = array(
 			'title' =>'Ingreso de Rubro de Egresos' ,
 			'contenido'=>'contenidos/rubro_v', 
 			);
+
 		$this->load->view('principal', $contenido);
 	}
 	public function _carga()
