@@ -14,6 +14,7 @@
 			"name"=>"enviar",
 			"value"=>"Enviar",			
 			'class' =>"btn btn-primary",
+			
 		 );
 		$monto = array(
 			"name"=>"monto",					
@@ -23,7 +24,7 @@
 		 );
 		$fecha = array(
 			"name"=>"fecha",
-			//"type"=>"date", //**Finción Incompatible con Google Chrome ya que choca con el JqueryMask de fecha**//
+			//"type"=>"date", //**Función Incompatible con Google Chrome ya que choca con el JqueryMask de fecha**//
 			'id'=>'fecha',
 			"value"=> date('d-m-Y'),					
 			'placeholder' =>"Fecha de Operación" ,
@@ -45,7 +46,8 @@
 		echo form_input($fecha);
 		echo form_label('Detalles','detalles');		
 		?>
-		<textarea class='form-control' name="detalles" id="" cols="2"></textarea>	
+		<textarea class='form-control' name="detalles" id="" cols="2"></textarea>
+		<div id="botones">
 			<?php		
 		echo form_submit($enviar);
 		echo form_reset($limpiar);
@@ -53,10 +55,9 @@
 		echo form_close();
 		//fin del formulario de ingreso de datos//
 			?>	
-		</div>
-		<div class="col-lg-4>">
-			
-		</div>		
+		</div> 	
+	</div>
+		
 		<div class="col-lg-3 col-lg-offset-3">
  		<?php 
  	//Rebibe $saldototal del array $saldo en el controlador carga_c(index)

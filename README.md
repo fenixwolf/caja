@@ -9,6 +9,11 @@
 	<li>correción de operaciones con la base de datos</li>
 </ol>
 
+<h4>Para este programa se utilizó la versión RC2 de Bootstrap</h4>
+
+#Nota
+<code>Buscar como enviar el listado de Rubros a una lista en la nueva tabla faltante</code>
+
 
 
 

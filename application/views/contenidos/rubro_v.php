@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="col-lg-4 col-lg-offset-2">
 		<?php 
@@ -36,10 +37,16 @@
 		echo form_label('Abreviacion del Rubro','abreviacion');
 		echo form_input($abreviacion);
 		echo validation_errors();
-		echo form_submit($enviar);
+		?>
+		<div id="botones">
+			<?php 
+			echo form_submit($enviar);
 		echo form_reset($limpiar);
 		echo form_close();
-
-		 ?>
+			 ?>
+		
 		</div>
+		</div> 
+
+		
 </div>

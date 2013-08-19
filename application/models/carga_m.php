@@ -17,6 +17,7 @@ class Carga_m extends CI_Model {
     	return $salida;
 
     }
+
     public function egreso($data){     
         
        
@@ -28,6 +29,26 @@ class Carga_m extends CI_Model {
         return $salida;
 
     }
-    
+    public function lista_rubros(){
+
+/** **//** **//** **//** **//** **//** **//** **//** **//** **//** **/
+        /*Como Demonios envío la lista de rubros a la vista??*/
+
+        $this->db->select('descripcion');
+        $rubros=$this->db->get('t_rubros');
+        //echo $rubros->num_rows();die;
+
+
+        if ($rubros->num_rows()>0) {
+
+          foreach ($rubros->result() as $dato) {
+              $arraydato=$descripcion =$dato;
+              return $arraydato;
+          }
+
+        }
+
+        
+        } 
 
     }

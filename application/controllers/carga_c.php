@@ -55,6 +55,23 @@ class Carga_c extends CI_Controller {
 		//echo '<pre>',print_r($_POST),'</pre>';die;
 	
 	}
+	public function validar(){
+		//echo "prueba de Validar";
+		$this->form_validation->set_rules('monto', 'Monto a Cargar', 'numeric|required|xss_clean');
+		$this->form_validation->set_message("required","Debe asignar un valor para <strong>%s</strong>");
+		$this->form_validation->set_rules('rubro', 'Tipo de rubro', 'trim|required|xss_clean');
+		
+		if ($this->form_validation->run()==FALSE) {
+			$this->index();/*Si la validacion da FALSA se dirije al index en donde
+							se cargan los contenidos incluyendo el set_value	*/
+		} 
+		else {
+
+			$this->_carga(); /*Si la validacion da TRUE continua en la funcion "_carga" */
+
+		}
+
+	}
 
 }
 
