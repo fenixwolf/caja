@@ -7,6 +7,7 @@
 			'role' =>'form' ,
 			'class'=>'form-horizontal', 
 			);
+		
 
 		$monto = array(
 			'name' =>'monto' , 
@@ -30,21 +31,66 @@
 			// Creación de una arreglo a partir de los datos traído para el dropdown!!
 		};
 		
-		foreach ($montos as $indice=>$arraymonto) {
-			$listamontos[$arraymonto['cod_ingreso']] = $arraymonto['monto'];
+				
+		foreach ($fecha as $indice=>$arraymonto) {
+			$fecha_completa=date('m',strtotime($arraymonto['fecha']));
+			//echo $fecha_completa; 
+
+			//*FUNCION LISTADO DE MESES*//
+			if ($fecha_completa=="01") {
+				$mes="ENERO";
+			}
+			elseif ($fecha_completa=="02") {
+				$mes="FEBRERO";
+			}
+			elseif ($fecha_completa=="03") {
+				$mes="MARZO";
+			}
+			elseif ($fecha_completa=="04") {
+				$mes="ABRIL";
+			}
+			elseif ($fecha_completa=="05") {
+				$mes="MAYO";
+			}
+			elseif ($fecha_completa=="06") {
+				$mes="JUNIO";
+			}
+			elseif ($fecha_completa=="07") {
+				$mes="JULIO";
+			}
+			elseif ($fecha_completa=="08") {
+				$mes="AGOSTO";
+			}
+			elseif ($fecha_completa=="09") {
+				$mes="SEPTIEMBRE";
+			}
+			elseif ($fecha_completa=="10") {
+				$mes="OCTUBRE";
+			}
+			elseif ($fecha_completa=="11") {
+				$mes="NOVIEMBRE";
+			}           
+			elseif ($fecha_completa=="12") {
+			 	$mes="DICIEMBRE";
+			}; 
+			///**FIN DE LA FUNCION LISTADO DE MESES**///
+
+			//*->lA variable $mes contiene el mes en curso */
+
+			$listamontos[$arraymonto['cod_ingreso']] = $mes;
 			// Creación de una arreglo a partir de los datos traído para el dropdown!!
 		};
-		//echo '<pre>',print_r($listarubros),'</pre>';
+		//echo '<pre>',print_r($listamontos),'</pre>';die;
 
 
 
-		echo form_open('gastos_c',$form);
+		echo form_open('gastos_c/carga',$form);
 		
 		echo '<div class="form-group">';
-		echo form_label('Monto del Egreso:', 'monto');
 		echo '<div class="col-lg-6 col-lm-2">';
-		echo form_input($monto);
+		echo form_label('Monto del Egreso:', 'monto');
 		echo '</div>';
+		echo form_input($monto);
 		echo '</div>';
 
 		echo '<div class="form-group">';
@@ -58,11 +104,16 @@
 		echo '<div class="col-lg-6">';
 		echo form_label('Monto de ingreso asociado: ', 'montos');
 		echo '</div>';
-		echo form_dropdown('montos', $listamontos);
+		echo form_dropdown('mes_monto', $listamontos,$mes);
 		echo '</div>';
+		echo form_label('Detalles','detalles');		
+		?>
+		<textarea class='form-control' name="detalles" id="" cols="2"></textarea>
+		<div id="botones">
+			<?php	
 
 		echo '<div class="form-group">';			
-		echo '<div id="botones">';
+		echo '<div id="botones" class="col-lg-6">';
 		echo form_submit($enviar);
 		echo form_reset($limpiar);
 		echo form_close();

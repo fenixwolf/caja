@@ -16,8 +16,21 @@ class Totales_m extends CI_Model {
       		$saldo=$row->monto;
       		return $saldo;      
    			}
-			} 
+			}
+		} 
+	public function egreso(){
+		$this->db->select_sum('gasto');
+		$consulta = $this->db->get('t_gastos');
+		if ($consulta->num_rows() > 0)
+			{
+   			foreach ($consulta->result() as $row)
+   			{
+      		$egreso=$row->gasto;
+      		return $egreso;      
+   			}
+			} 		
 	}
+
 
 }
 

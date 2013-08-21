@@ -29,6 +29,17 @@ class Carga_m extends CI_Model {
         return $salida;
 
     }
+    public function gastos($data){     
+        
+       
+        $salida=$this->db->insert('t_gastos', $data);
+        //echo '<pre>',print_r($data),'</pre>';
+
+        //echo '<pre>',print_r($cargar),'</pre>';die;
+        //$this->db->insert('t_operacion', $cod_operacion);
+        return $salida;
+
+    }
     public function lista_rubros(){
 
 
@@ -47,9 +58,15 @@ class Carga_m extends CI_Model {
         $this->db->select('cod_ingreso, fecha, monto');
         $this->db->from('t_ingreso');
         //echo $montos->num_rows();die;
-        $montos = $this->db->get();
-        $montos = $montos->result_array();
-        return $montos;
+        $montosquery = $this->db->get();
+        $fecha = $montosquery->result_array();
+        
+            return $fecha;
+        
+       
+     
+        
+        
 
         } 
 
