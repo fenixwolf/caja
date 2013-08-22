@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/js/bootstrap.js" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/styles.css" media="screen">
+	<link rel="stylesheet" href="<?=base_url()?>dist/css/font-awesome.min.css">
 	<script src="<?=base_url()?>dist/js/jquery-2.0.3.min.js"></script>
 	<script src="<?=base_url()?>dist/js/fechajquery.js"></script>
 	<script>

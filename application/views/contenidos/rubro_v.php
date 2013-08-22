@@ -28,7 +28,7 @@
 			'value'=>'Limpiar',
 			'class'=>'btn btn-warning', 
 			);
-
+		
 
 
 		echo form_open('rubro_c/validar',$form);
@@ -50,16 +50,27 @@
 		
 		</div>
 		</div> 
-<div class="row" class="table-responsive">
+<div class="row" class="table-responsive" id="tabla_rubros">
+	<h4>Lista de Rubros Registrados</h4>
 	<div class="col-lg-6">
-		<table class="table table-striped">	
+		<table class="table table-snippet">	
 		<tr>
-			<td>RUBRO</td>
-			<td>ABREVIATURA</td>
-		</tr>
-		</table>
+			<th>RUBRO</th>
+			<th>COMANDOS</th>
+		</tr>		
+		<?php foreach ($rubros as $indice=>$arrayrubros) {
+		$listarubros=$arrayrubros["descripcion"];				
+			echo "<tr><td>$listarubros</td><td><i class='icon-folder-open-alt'></i></td></tr>" ;
+
+
+		}?>
+	</table>
 
 	</div>
+	<dic class="col-lg-6">
+
+	</dic>
+	
 </div>
 		
 </div>

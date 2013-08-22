@@ -8,12 +8,13 @@ class Rubro_c extends CI_Controller {
 	}
 
 	public function index()
-	{
-			$this->carga_m->
+	{		
 			$contenido = array(
 			'title' =>'Ingreso de Rubro de Egresos' ,
-			'contenido'=>'contenidos/rubro_v', 
+			'contenido'=>'contenidos/rubro_v',
+			'rubros'=>$this->carga_m->lista_rubros(),			
 			);
+			//echo '<pre>',print_r($contenido),'</pre>';die;
 
 		$this->load->view('principal', $contenido);
 	}
@@ -22,7 +23,7 @@ class Rubro_c extends CI_Controller {
 		
 		$this->load->model('carga_m');		
 		//Imprime arreglos enviados//
-	 	//date("d-m-Y, h:m:A", strtotime($registro['fecha_actualizacion']))
+	 	
 		$data = array(
 			'abreviacion'=> $this->input->post('abreviacion') , 
 			'descripcion'=> $this->input->post('rubro'),
