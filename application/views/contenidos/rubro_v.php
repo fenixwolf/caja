@@ -50,6 +50,16 @@
 		
 		</div>
 		</div> 
+<div class="row" class="table-responsive">
+	<div class="col-lg-6">
+		<table class="table table-striped">	
+		<tr>
+			<td>RUBRO</td>
+			<td>ABREVIATURA</td>
+		</tr>
+		</table>
 
+	</div>
+</div>
 		
 </div>

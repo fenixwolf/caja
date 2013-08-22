@@ -44,7 +44,7 @@ class Carga_m extends CI_Model {
 
 
 
-        $this->db->select('cod_rubros,descripcion');
+        $this->db->select('cod_rubros,descripcion, abreviacion');
         $this->db->from('t_rubros');
         //echo $rubros->num_rows();die;
         $rubros = $this->db->get();

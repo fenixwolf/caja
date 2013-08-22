@@ -9,7 +9,7 @@ class Rubro_c extends CI_Controller {
 
 	public function index()
 	{
-		
+			$this->carga_m->
 			$contenido = array(
 			'title' =>'Ingreso de Rubro de Egresos' ,
 			'contenido'=>'contenidos/rubro_v', 
