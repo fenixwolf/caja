@@ -59,9 +59,9 @@ class Carga_m extends CI_Model {
         $this->db->from('t_ingreso');
         //echo $montos->num_rows();die;
         $montosquery = $this->db->get();
-        $fecha = $montosquery->result_array();
+        $montos= $montosquery->result_array();
         
-            return $fecha;
+            return $montos;
         
        
      

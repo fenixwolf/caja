@@ -122,7 +122,30 @@
 			 ?>
 		
 		</div>
-		</div> 
+		</div>
+	
+
+
+
 
 		
+</div>
+<div class="row" class="table table-responsive">
+	<div class="col-lg-4 col-lg-offset-2 cl-md-4">
+		<table class="table table-hover">
+			<h4>Últimos registros</h4>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+			</tr>
+			<tr>
+				<td>Campo1</td>
+				<td>Campo2</td>
+			</tr>
+		</table>	
+
+
+
+
+	</div>
 </div>
