@@ -19,9 +19,10 @@
    $("#fecha").mask("99-99-9999");
    //$('#monto').mask('99999,99');
   	});
-  	$('#myModal').on('show.bs.modal', function (e) {
-  	if (!data) return e.preventDefault() // stops modal from being shown
-	})
+  	$('#myModal').modal({
+  keyboard: false
+});
+
 
 	</script>
 </head>
