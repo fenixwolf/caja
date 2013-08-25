@@ -19,12 +19,8 @@
    $("#fecha").mask("99-99-9999");
    //$('#monto').mask('99999,99');
   	});
-  	$('#myModal').modal({
-  keyboard: false
-});
-
-
-	</script>
+	
+  	</script>
 </head>
 <header>
 
@@ -42,6 +38,7 @@
 			<div class="col-lg-5-offset-3">
 				<?php $this->load->view($contenido);
 				 ?>
+
 
 			</div>
 		</div>

@@ -12,6 +12,7 @@ class Gastos_c extends CI_Controller {
 	public function index()
 	{
 		
+		$data['lista_rubros_gastos']=$this->carga_m->lista_rubros_gastos();
 		$data['rubros']=$this->carga_m->lista_rubros();
 		$data['fecha']=$this->carga_m->lista_montos();			
 		$data['contenido']="contenidos/gastos_v"; /*Enviando los valores de vista*/	

@@ -80,7 +80,7 @@
 			$listamontos[$arraymonto['cod_ingreso']] = $mes;
 			// Creación de una arreglo a partir de los datos traído para el dropdown!!
 		};
-		//echo '<pre>',print_r($listamontos),'</pre>';die;
+		//echo '<pre>',print_r($lista_rubros_gastos),'</pre>';
 
 
 
@@ -135,13 +135,24 @@
 		<table class="table table-hover">
 			<h4>Últimos registros</h4>
 			<tr>
-				<th>1</th>
-				<th>2</th>
+				<th>Monto</th>
+				<th>Mes</th>
+				<th>Gasto</th>
+				<th>Rubro</th>
 			</tr>
-			<tr>
-				<td>Campo1</td>
-				<td>Campo2</td>
-			</tr>
+			
+				<?php foreach ($lista_rubros_gastos as $indice => $lista) {
+					$monto=$lista['monto'];
+					$fecha= date('m',strtotime($lista['fecha']));
+					$gasto=$lista['gasto'];
+					$descripcion=$lista['descripcion'];
+					echo "<tr><td>$monto</td>
+				<td>$fecha</td>
+				<td>$gasto</td>
+				<td>$descripcion</td></tr>";
+				} ?>
+				
+			
 		</table>	
 
 

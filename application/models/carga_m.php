@@ -61,13 +61,20 @@ class Carga_m extends CI_Model {
         $montosquery = $this->db->get();
         $montos= $montosquery->result_array();
         
-            return $montos;
-        
-       
-     
-        
-        
+            return $montos;}
 
-        } 
+   public function lista_rubros_gastos(){
+    
+    $this->db->select('*');
+    $this->db->from('t_gastos');
+    $this->db->join('t_ingreso', 't_gastos.cod_ingreso = t_ingreso.cod_ingreso');
+    $this->db->join('t_rubros', 't_rubros.cod_rubros = t_gastos.cod_rubros');
+    //$this->db->where('t_gastos.cod_ingreso', "2");
+    $query=$this->db->get();
+    $resultado=$query->result_array();
+    return $resultado;
+    //echo '<pre>',print_r($resultado),'</pre>';die;
+
+   }         
 
     }
